@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="kr" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>P;ㅠ 챗봇</title>
+
+<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.bundle.min.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="static/simple_chat_app.js"></script>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+	rel="stylesheet">
+<link
+	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"
+	rel="stylesheet">
+<link type="text/css" href="static/simple_chat_app.css" rel="stylesheet">
+<link rel="short icon" href="#">
+
+<!-- Carousel -->
+<link
+	href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap"
+	rel="stylesheet">
+<link
+	href="https://fonts.googleapis.com/css?family=Poppins:300,400,500&display=swap"
+	rel="stylesheet">
+<link
+	href="https://fonts.googleapis.com/css?family=Source+Serif+Pro:400,600&display=swap"
+	rel="stylesheet">
+
+<link rel="stylesheet" href="static/css/owl.carousel.min.css">
+<link rel="stylesheet" href="static/fonts/icomoon/style.css">
+<link rel="stylesheet" href="static/css/style.css">
+<link rel="stylesheet" type="text/css" href="static/css/modal.css">
+
+<script src="static/js/popper.min.js"></script>
+<script src="static/js/owl.carousel.min.js"></script>
+<script src="static/js/main.js"></script>
+</head>
+
+<body>
+	<div class="container">
+		<div class="content-wrapper">
+			<div class="row gutters" style="text-align: center;">
+				<div class="col-xl-8 col-lg-8 col-md-8 col-sm-8 col-8">
+					<div class="card m-0">
+						<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+							<div class="selected-user" style="width: 710px;">
+								<span>To: <span class="name">R-P</span></span>
+							</div>
+							<div class="chat-container"
+								style="overflow: scroll; height: 550px; width: 710px;">
+								<ul class="chat-box chatContainerScroll">
+								</ul>
+							</div>
+							<div class="form-group mt-3 mb-0" style="text-align: center;">
+								<textarea class="form-control" id="form-control"
+									style="width: 90%; display: block; margin-left: auto; margin-right: auto;"
+									onkeyup="checkEntry()" rows="3" placeholder="새싹이에게 물어보아요!"></textarea>
+								<button class="submitBtn" onclick="sendMessage();"
+									style="width: 150px; height: 40px;" disabled>전송</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

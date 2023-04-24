@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.mapper.BookMapper">
+        <!-- SELECT 구문 -->
+        <!-- 로그인 확인 -->
+        <select id="confirmUserLogin" parameterType="hashmap" resultType="int">
+                SELECT TRUE FROM
+                lib_total.user
+                WHERE
+                user_id = #{userID} and user_pw = TO_BASE64(AES_ENCRYPT(#{userPW}, 'TESTKEY123'))
+        </select>
+
+        <!-- 회원가입 중복 확인 -->
+        <select id="checkDuplicateID" parameterType="string" resultType="int">
+                SELECT
+                        CASE
+                                WHEN (COUNT(*) > 0) THEN 1
+                                ELSE 0
+                        END AS result
+                FROM lib_total.user
+                WHERE user_id = #{user_id};
+        </select>
+
+        <select id="checkEmail" parameterType="string" resultType="int">
+                SELECT
+                        CASE
+                                WHEN (COUNT(*) > 0) THEN 1
+                                ELSE 0
+                        END AS result
+                FROM lib_total.user
+                WHERE email = #{email};
+        </select>
+
+        <select id="checkPhone" parameterType="string" resultType="int">
+                SELECT
+                        CASE
+                                WHEN (COUNT(*) > 0) THEN 1
+                                ELSE 0
+                        END AS result
+                FROM lib_total.user
+                WHERE phone = #{phone};
+        </select>
+
+        <!-- ID 및 Password 찾기 -->
+        <select id="findID" parameterType="hashmap" resultType="string">
+                SELECT
+                        user_id
+                FROM lib_total.user
+                WHERE
+                        user_nm = #{user_nm} AND
+                        user_birth = #{user_birth} AND
+                        email = #{email};
+        </select>
+
+        <select id="findPW" parameterType="hashmap" resultType="string">
+                SELECT
+                        AES_DECRYPT(FROM_BASE64(user_pw), "TESTKEY123")
+                FROM lib_total.user
+                WHERE
+                        user_id = #{user_id} AND
+                        user_nm = #{user_nm} AND
+                        user_birth = #{user_birth} AND
+                        email = #{email};
+        </select>
+
+        <!-- INSERT 구문 -->
+        <!-- 유저 회원가입 -->
+        <insert id="insertToTotal" parameterType="com.example.dto.UserDTO">
+                INSERT INTO lib_total.user
+                VALUES
+                (
+                        #{user_id}, TO_BASE64(AES_ENCRYPT(#{user_pw}, 'TESTKEY123')), #{user_nm}, #{user_sex}, #{phone}, #{user_birth},
+                        timestampdiff(YEAR, user_birth, curdate()), #{user_addr}, #{email}, 1, #{role}
+                );
+        </insert>
+
+        <insert id="insertToGwangjin" parameterType="com.example.dto.UserDTO">
+                INSERT INTO lib_gwangjin.user
+                VALUES
+                (
+                        #{user_id}, TO_BASE64(AES_ENCRYPT(#{user_pw}, 'TESTKEY123')), #{user_nm}, #{user_sex}, #{phone}, #{user_birth},
+                        timestampdiff(YEAR, user_birth, curdate()), #{user_addr}, #{email}, 1, #{role}
+                );
+        </insert>
+
+        <insert id="insertToGunja" parameterType="com.example.dto.UserDTO">
+                INSERT INTO lib_gunja.user
+                VALUES
+                (
+                        #{user_id}, TO_BASE64(AES_ENCRYPT(#{user_pw}, 'TESTKEY123')), #{user_nm}, #{user_sex}, #{phone}, #{user_birth},
+                        timestampdiff(YEAR, user_birth, curdate()), #{user_addr}, #{email}, 1, #{role}
+                );
+        </insert>
+
+        <insert id="insertToJayang" parameterType="com.example.dto.UserDTO">
+                INSERT INTO lib_jayang.user
+                VALUES
+                (
+                        #{user_id}, TO_BASE64(AES_ENCRYPT(#{user_pw}, 'TESTKEY123')), #{user_nm}, #{user_sex}, #{phone}, #{user_birth},
+                        timestampdiff(YEAR, user_birth, curdate()), #{user_addr}, #{email}, 1, #{role}
+                );
+        </insert>
+        
+        <insert id="insertToHabjung" parameterType="com.example.dto.UserDTO">
+                INSERT INTO
+                        lib_habjung.user
+                VALUES
+                (
+                        #{user_id}, TO_BASE64(AES_ENCRYPT(#{user_pw}, 'TESTKEY123')), #{user_nm}, #{user_sex}, #{phone}, #{user_birth},
+                        timestampdiff(YEAR, user_birth, curdate()), #{user_addr}, #{email}, 1, #{role}
+                );
+        </insert>
+
+        <!-- 대출 신청 -->
+        <insert id="sendRentRequestToGunja" parameterType="com.example.dto.RentDTO">
+                INSERT INTO lib_gunja.rent (user_id, lib_book_cd)
+                VALUES(
+                        #{userID}, #{lib_book_cd}
+                )
+        </insert>
+
+        <insert id="sendRentRequestToHabjung" parameterType="com.example.dto.RentDTO">
+                INSERT INTO lib_habjung.rent (user_id, lib_book_cd)
+                VALUES(
+                        #{userID}, #{lib_book_cd}
+                )
+        </insert>
+
+        <insert id="sendRentRequestToJayang" parameterType="com.example.dto.RentDTO">
+                INSERT INTO lib_jayang.rent (user_id, lib_book_cd)
+                VALUES(
+                        #{userID}, #{lib_book_cd}
+                )
+        </insert>
+
+        <insert id="sendRentRequestToGwangjin" parameterType="com.example.dto.RentDTO">
+                INSERT INTO lib_gwangjin.rent (user_id, lib_book_cd)
+                VALUES(
+                        #{userID}, #{lib_book_cd}
+                )
+        </insert>
+
+        <!-- 알림 신청 -->
+        <insert id="setAlarm" parameterType="com.example.dto.RentDTO">
+                INSERT INTO lib_total.return_alarm (user_id, t_book_cd)
+                values(
+                        #{userID}, #{lib_book_cd}
+                )
+        </insert>
+</mapper>

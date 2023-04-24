@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+
+*,
+::before,
+::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Open Sans", sans-serif;
+    font-size: 1rem;
+    color: #23004d;
+    overflow-y: scroll;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    text-align: center;
+}
+
+.sesac {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.text_name {
+	display: none;
+}
+
+.search {
+    grid-template-columns: 100%;
+    height: 100vh;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+}
+
+.search_content {
+    display: grid;
+    align-items: center;
+    padding-top: 30px;
+}
+
+.search_forms {
+    position: relative;
+    height: 100%;
+}
+
+.search_register {
+    bottom: 1rem;
+    width: 100%;
+    background-color: #f2f2f2;
+    padding: 2rem 1rem;
+    border-radius: 1rem;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(35, 0, 77, .2);
+    animation-duration: 0.4s;
+    animation-name: animateLogin;
+}
+
+.search_id_title {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.search_input {
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #23004d;
+    width: 100%;
+}
+
+.search_input::placeholder {
+    font-size: 1rem;
+    font-family: "Open Sans", sans-serif;
+    color: #a49eac;
+}
+
+.search_button {
+    display: block;
+    padding: 1rem;
+    margin: 2rem 0;
+    background-color: #ffa876;
+    color: #fff;
+    font-weight: 600;
+    text-align: center;
+    border-radius: 0.5rem;
+    transition: 0.3s;
+    width: 100%;
+    border:none;
+    font-size: large;
+}
+
+.search_button:hover {
+    background-color: #ffa876;
+    border:none;
+}
+
+
+@keyframes animateLogin {
+    0% {
+        transform: scale(1, 1);
+    }
+
+    50% {
+        transform: scale(1.1, 1.1);
+    }
+
+    100% {
+        transform: scale(1, 1);
+    }
+}
+
+@media screen and (min-width: 576px) {
+    .search_forms {
+        width: 500px;
+        justify-self: center;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .search_content {
+        grid-template-columns: repeat(2, max-content);
+        justify-content: center;
+        align-items: center;
+    }
+
+    .search_register {
+        left: -11rem;
+    }
+}
+
+
+/* ----------------------------- */
+
+.form_list {
+    width: 100%;
+}
+
+.form_title {
+    text-align: left;
+    font-weight: bold;
+    font-size: large;
+}
+
+.form_cont {
+    text-align: left;
+    color: red;
+    padding-bottom: 30px;
+}
+
+.search_icon {
+    font-size: 1.5rem;
+    color: red;
+}
+
+.login__icon {
+    font-size: 1.5rem;
+    color: #f88441;
+}
+
+.check_id {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    column-gap: 0.5rem;
+    padding: 1.125rem 1rem;
+    background-color: #fff;
+    margin-top: 1rem;
+    border-radius: 0.5rem;
+}

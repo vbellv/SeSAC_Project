@@ -1,0 +1,42 @@
+{
+    "lib_total": {
+        "host": "teamcarrot-mariadb-test-working.c0ohthsym6qm.us-east-1.rds.amazonaws.com",
+        "port": 3306,
+        "user": "root",
+        "password": "12345678",
+        "db": "lib_total",
+        "charset": "utf8"
+    },
+    "lib_gwangjin": {
+        "host": "teamcarrot-mariadb-test-working.c0ohthsym6qm.us-east-1.rds.amazonaws.com",
+        "port": 3306,
+        "user": "root",
+        "password": "12345678",
+        "db": "lib_gwangjin",
+        "charset": "utf8"
+    },
+    "lib_gunja": {
+        "host": "teamcarrot-mariadb-test-working.c0ohthsym6qm.us-east-1.rds.amazonaws.com",
+        "port": 3306,
+        "user": "root",
+        "password": "12345678",
+        "db": "lib_gunja",
+        "charset": "utf8"
+    },
+    "lib_jayang": {
+        "host": "teamcarrot-mariadb-test-working.c0ohthsym6qm.us-east-1.rds.amazonaws.com",
+        "port": 3306,
+        "user": "root",
+        "password": "12345678",
+        "db": "lib_jayang",
+        "charset": "utf8"
+    },
+    "lib_habjung": {
+        "host": "teamcarrot-mariadb-test-working.c0ohthsym6qm.us-east-1.rds.amazonaws.com",
+        "port": 3306,
+        "user": "root",
+        "password": "12345678",
+        "db": "lib_habjung",
+        "charset": "utf8"
+    }
+}

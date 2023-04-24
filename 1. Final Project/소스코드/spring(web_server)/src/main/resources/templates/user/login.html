@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title>Login</title>
+<link rel="stylesheet" href="static/css/user/login.css">
+<link rel="stylesheet" href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script type="text/javascript" src="static/js/user/login.js"></script>
+</head>
+
+<body>
+	<div class="login">
+		<div class="login__content">
+			<div class="login__img">
+				<img src="static/images/user/login_background_image.avif">
+			</div>
+
+			<div class="login__forms">
+				<form action="login" method="post" class="login__register" id="login-in">
+					<h1 class="login__title">SeSAC Book</h1>
+
+					<div class="login__box">
+						<i class='bx bx-user login__icon'></i> <input type="text" id="userID" name="userID"
+							placeholder="아이디" class="login__input">
+					</div>
+
+					<div class="login__box">
+						<i class='bx bx-lock login__icon'></i> <input type="password" id="userPW" name="userPW"
+							placeholder="비밀번호" class="login__input">
+					</div>
+
+					<table style="width: 100%">
+						<tr style="width: 100%;">
+							<td style="width: 50%;">
+								<a th:href="@{/findID}" class="login__forgot">
+									아이디 찾기
+								</a>
+							</td>
+							<td style="width: 50%;">
+								<a th:href="@{/findPW}" class="login__forgot">
+									비밀번호 찾기
+								</a>
+							</td>
+						</tr>
+					</table>
+					
+					<a href="#" onclick="sendUserLoginRequest()" class="login__button">로그인</a>
+
+					<div>
+						<span class="login__account login__account--account">
+							계정이 없으신가요?
+						</span>
+						<span class="login__signin login__signin--signup" id="sign-up">
+							<a th:href="@{/register}">회원가입</a>
+						</span>
+					</div>
+				</form>
+
+				<form action="" class="login__create none" id="login-up">
+					<h1 class="login__title">회원가입</h1>
+
+					<div class="login__box">
+						<i class='bx bx-user login__icon'></i> <input type="text"
+							placeholder="Username" class="login__input">
+					</div>
+
+					<div class="login__box">
+						<i class='bx bx-at login__icon'></i> <input type="text"
+							placeholder="Email" class="login__input">
+					</div>
+
+					<div class="login__box">
+						<i class='bx bx-lock login__icon'></i> <input type="text"
+							placeholder="Password" class="login__input">
+					</div>
+
+					<a href="#" class="login__button">로그인</a>
+
+					<div>
+						<span class="login__account login__account--account">
+							Already have an Account?
+						</span>
+						<span class="login__signup login__signup--signup" id="sign-in">
+							로그인
+						</span>
+					</div>
+
+					<div class="login__social">
+						<a href="#" class="login__social--icon"><i
+							class='bx bxl-facebook'></i></a> <a href="#"
+							class="login__social--icon"><i class='bx bxl-twitter'></i></a> <a
+							href="#" class="login__social--icon"><i class='bx bxl-google'></i></a>
+						<a href="#" class="login__social--icon"><i
+							class='bx bxl-github'></i></a>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

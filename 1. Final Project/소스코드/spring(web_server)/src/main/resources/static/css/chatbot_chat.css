@@ -1,0 +1,107 @@
+@font-face {
+	font-family: 'locus_sangsang';
+	src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/locus_sangsang.woff') format(woff);
+	font-weight: normal;
+	font-style: normal;
+}
+
+body{margin-top:20px;
+    background: url("../images/background.png");
+    background-repeat: no-repeat;
+
+    background-position: center;
+
+    background-attachment: fixed;
+    background-size : contain ;
+}
+
+.container{
+    text-align: center;
+}
+
+table {
+    margin-left:auto; 
+    margin-right:auto;
+}
+
+.chat-messages {
+    display: flex;
+    flex-direction: column;
+    max-height: 2000px;
+    overflow: scroll;
+}
+
+.chat-message-left,
+.chat-message-right {
+    display: flex;
+    flex-shrink: 0
+}
+
+.chat-message-left {
+    margin-right: auto
+}
+
+.chat-message-right {
+    flex-direction: row-reverse;
+    margin-left: auto
+}
+
+.py-3 {
+    padding-top: 1rem!important;
+    padding-bottom: 1rem!important;
+}
+.px-4 {
+    padding-right: 1.5rem!important;
+    padding-left: 1.5rem!important;
+}
+.flex-grow-0 {
+    flex-grow: 0!important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.border-top {
+    border-top: 1px solid #dee2e6!important;
+}
+
+.rounded-circle{
+    text-align: end;
+}
+
+.btn2 {
+    background-color: white;
+    border-width: 1px;
+    border-color: #000080;
+    color: white;
+    padding: 10px 13px;
+    font-size: 15px;
+    color: #000080;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.chat .messages .message .typing {
+    display: inline-block;
+    width: 0.8rem;
+    height: 0.8rem;
+    margin-right: 0rem;
+    box-sizing: border-box;
+    background: #ccc;
+    border-radius: 50%;
+    text-align: center;
+}
+
+.typing.typing-1 {
+    -webkit-animation: typing 3s infinite;
+    animation: typing 3s infinite;
+}
+
+.typing.typing-2 {
+    -webkit-animation: typing 3s 250ms infinite;
+    animation: typing 3s 250ms infinite;
+}
+
+.typing.typing-3 {
+    -webkit-animation: typing 3s 500ms infinite;
+    animation: typing 3s 500ms infinite;
+}
