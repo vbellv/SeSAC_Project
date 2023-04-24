@@ -1,0 +1,87 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>오늘의 학습</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Jua', sans-serif;
+        }
+
+        body {
+            width: 100%;
+            height: 100vh;
+            background-image: url(https://img.freepik.com/free-photo/empty-blackboard_53876-16241.jpg?w=1380&t=st=1666889770~exp=1666890370~hmac=59d3c84a505877228c65171c60f05be9efd9feedfd2e637a71bbe29880886924);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .shadow1{
+            position:absolute;left:100;top:50; 
+            font-size:300%; 
+            font-weight:bold; 
+            color: rgb(255, 255, 255);
+            text-shadow: 5px 5px 3px rgb(0, 0, 0);;
+        }
+
+        .shadow2{
+            position:absolute;left:-100;top:120; 
+            font-size:230%; 
+            font-weight:bold; 
+            color: rgb(255, 255, 255);
+            text-shadow: 5px 5px 3px rgb(0, 0, 0);
+        }
+
+        .shadow3{
+            position:absolute;left:1700;top:800; 
+        }
+
+        .shadow4{
+            font-size:170%; 
+            font-weight:bold; 
+            color: rgb(241, 225, 80);
+            text-shadow: 5px 5px 3px rgb(0, 0, 0);
+            position:absolute;left:1500;top:800; 
+        }
+
+    </style>
+</head>
+
+<body>
+    <span>
+        <center>
+            <p class="shadow1">[오늘의 학습 내용]</p>
+        </center>
+    </span>
+    <span>
+        <pre>
+            <p class="shadow2"> 
+                자바(Java)는 썬 마이크로시스템즈의 제임스 고슬링과 다른 연구원들이 개발한 객체 지향적 프로그래밍 언어이다. 
+                처음에는 가전제품 내에 탑재해 동작하는 프로그램을 위해 개발되었지만 
+                현재 웹 애플리케이션 분야에 가장 많이 사용하는 언어 중 하나이고, 
+                안드로이드를 비롯한 모바일 기기용 소프트웨어 개발에도 널리 사용되고 있다. 
+            
+                자바를 다른 컴파일언어와 구분 짓는 가장 큰 특징은 컴파일된 코드가 플랫폼 독립적이라는 점이다. 
+                자바 컴파일러는 자바 언어로 작성된 프로그램을 바이트코드라는 특수한 바이너리 형태로 변환한다. 
+                바이트코드를 실행하기 위해서는 JVM(자바 가상 머신, Java Virtual Machine)이라는 특수한 가상 머신이 필요한데, 
+                이 가상 머신은 자바 바이트코드를 어느 플랫폼에서나 동일한 형태로 실행시킨다. 
+                때문에 자바로 개발된 프로그램은 CPU나 운영 체제의 종류에 관계없이 
+                JVM을 설치할 수 있는 시스템에서는 어디서나 실행할 수 있으며, 
+                이 점이 웹 애플리케이션의 특성과 맞아떨어져 폭발적인 인기를 끌게 되었다.</p>
+        </pre>
+    </span>
+    <th:block>
+        <a href="/study/information">
+            <img src="https://cdn-icons-png.flaticon.com/512/329/329360.png" class="shadow3" style="float:right;width:100px;height: 100px;"/>
+        </a>
+    </th:block>
+    <p class="shadow4">다음 학습으로 이동</p>
+
+
+</body>
+
+</html>

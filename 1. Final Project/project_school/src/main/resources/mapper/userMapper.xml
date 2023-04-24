@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.project_school.mapper.UserMapper">
+    <insert id="join" parameterType="com.example.project_school.model.User">
+        insert into user values(#{userId},#{userPw},#{classOf},#{userName})
+    </insert>
+
+    <select id="getPw" parameterType="String" resultType="String">
+        select userPw
+        from user
+        where userId=#{userId}
+    </select>
+
+    <select id="selectUser" parameterType="String" resultType="com.example.project_school.model.User">
+        select *
+        from user
+        where userId=#{userId}
+    </select>
+
+    <select id="searchId" parameterType="String" resultType="String">
+        select userId
+        from user
+        where classOf=#{classOf}
+    </select>
+
+    <select id="searchPw" parameterType="String" resultType="String">
+        select userPw
+        from user
+        where classOf=#{classOf}
+    </select>
+
+    <select id="searchUserId" parameterType="String" resultType="com.example.project_school.model.User">
+        select userId
+        from user
+        where classOf=#{classOf}
+    </select>
+
+    <select id="searchUserPw" parameterType="String" resultType="com.example.project_school.model.User">
+        select userPw
+        from user
+        where classOf=#{classOf}
+    </select>
+
+    <select id="searchNum" parameterType="String" resultType="String">
+        select classOf
+        from user
+        where userName=#{userName}
+    </select>
+
+    <select id="searchName" parameterType="String" resultType="String">
+        select userName
+        from user
+        where classOf=#{classOf}
+    </select>
+
+    <select id="searchName2" parameterType="String" resultType="String">
+        select userName
+        from user
+        where userId=#{userId}
+    </select>
+
+    <select id="check" parameterType="String" resultType="String">
+        select userId
+        from user
+        where userId=#{userId}
+    </select>
+
+</mapper>

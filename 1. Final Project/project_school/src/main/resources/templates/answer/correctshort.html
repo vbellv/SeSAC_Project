@@ -1,0 +1,59 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>탈출 성공!</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Jua', sans-serif;
+        }
+
+        body {
+            width: 100%;
+            height: 100vh;
+            background-image: url(https://img.freepik.com/free-vector/hand-drawn-friends-jumping-together_23-2149095223.jpg?w=1060&t=st=1666892619~exp=1666893219~hmac=4beab61fa03883138e7e6c0f1b034f0d915df04e80085411a3fbd2afb66e5f98);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .next{
+            position:absolute;left:300;top:50; 
+            font-size:400%; 
+            font-weight:bold; 
+            color: rgb(255, 229, 82);
+            text-shadow: 5px 5px 3px rgb(0, 0, 0);
+        }
+
+        .next2{
+            position:absolute;left:850;top:650; 
+            font-size:400%; 
+            font-weight:bold; 
+            color: rgb(132, 170, 241);
+            text-shadow: 5px 5px 3px rgb(0, 0, 0);
+        }
+
+    </style>
+</head>
+
+<body>
+    <span>
+        <pre>
+            <p class="next"> 
+                탈출에 성공하였습니다!
+                열심히 공부했군요!
+                오늘의 학습은 여기까지~
+                다음에 만나요!</p>
+        </pre>
+    </span>
+    <th:block>
+        <a class="next2" href="/">홈으로</a>
+        </a>
+    </th:block>
+
+</body>
+
+</html>
